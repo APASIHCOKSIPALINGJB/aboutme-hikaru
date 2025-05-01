@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alex Portfolio</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 20px;
+            font-size: 18px;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            position: relative;
+        }
+        nav a::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #ff6b6b;
+            transition: width .3s;
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+        }
+        nav a:hover::after, nav a.active::after {
+            width: 100%;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+            padding: 0 20px;
+            text-align: center;
+            flex-direction: column;
+        }
+        .profile-img {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            border: 5px solid #ff6b6b;
+            background: url('alex.jpg') center/cover no-repeat;
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-size: 48px;
+        }
+        h2 {
+            font-size: 32px;
+            color: #ff6b6b;
+            height: 40px;
+        }
+        p {
+            margin-top: 20px;
+            color: #aaa;
+            max-width: 600px;
+        }
+        .social {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        .social a {
+            color: #fff;
+            font-size: 24px;
+            text-decoration: none;
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: 2px solid #ff6b6b;
+            color: #ff6b6b;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: background 0.3s, color 0.3s;
+        }
+        .btn:hover {
+            background: #ff6b6b;
+            color: #000;
+        }
+        .typing {
+            border-right: 2px solid #ff6b6b;
+            white-space: nowrap;
+            overflow: hidden;
+            display: inline-block;
+            animation: blink 0.75s step-end infinite;
+        }
+        @keyframes blink {
+            from, to { border-color: transparent; }
+            50% { border-color: #ff6b6b; }
+        }
+    </style>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <nav>
+        <a href="#" class="active">Home</a>
+        <a href="#">Services</a>
+        <a href="#">Skills</a>
+        <a href="#">Education</a>
+        <a href="#">Experience</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <div class="container">
+        <div class="profile-img"></div>
+        <h1>Hi, I'm <span style="color: #ff6b6b;">Hikaru</span></h1>
+        <h2 class="typing"></h2>
+        <p>Except for hard work, there is suffering. Dislike in common, suffering holds misery, there is merit in denial, error, disability, questioning, no, worse here. </p>
+        <div class="social">
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-xing"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+        <a href="https://wa.me/62881027334067" class="btn" target="_blank">Hire me</a>
+    </div>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const text = "I'm Reverse Engineer";
+        const typingElement = document.querySelector(".typing");
+        let index = 0;
+
+        function type() {
+            if (index < text.length) {
+                typingElement.textContent += text.charAt(index);
+                index++;
+                setTimeout(type, 150); // Kecepatan ketik
+            }
+        }
+        type();
+    });
+    </script>
+
+</body>
+</html>
